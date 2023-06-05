@@ -1,8 +1,5 @@
-Example:
-
-Given a new vehicle with the following features: Horsepower = 180,
-Weight = 2800 lbs, Max Speed = 135 mph, what is the most likely class
-for this vehicle using multiple classifications with Naive Bayes?
+## Example:
+Given a new vehicle with the following features: Horsepower = 180, Weight = 2800 lbs, Max Speed = 135 mph, what is the most likely class for this vehicle .
 
 | **Instance** | **Horsepower** | **Weight (lbs)** | **Max Speed (mph)** | **Class**  |
 |--------------|----------------|------------------|---------------------|------------|
@@ -15,13 +12,11 @@ for this vehicle using multiple classifications with Naive Bayes?
 | 7            | 180            | 2800             | 135                 | Car        |
 
 We want to classify a new vehicle with the following features:
-
 Horsepower = 180, Weight = 2800 lbs, Max Speed = 135 mph.
 
 Let's begin:
 
-using the formula P(X) = Number of X instances / Total number of
-instances.
+using the formula P(X) = Number of X instances / Total number of instances.
 
 | **Vehicle** | **Number of Instances** | **Total Instances** | **Probability**             |
 |-------------|-------------------------|---------------------|-----------------------------|
@@ -31,24 +26,21 @@ instances.
 
 the probabilities of each feature:
 
-For Horsepower:
-
+\- For Horsepower:
 | **Vehicle** | **Number of Instances** | **Total Instances** | **P(Horsepower = 180 \| Vehicle)** |
 |-------------|-------------------------|---------------------|------------------------------------|
 | Car         | 3                       | 7                   | 1/3                                |
 | Motorcycle  | 2                       | 7                   | 0                                  |
 | Truck       | 2                       | 7                   | 0                                  |
 
-For weight,
-
+\- For weight,
 | **Vehicle** | **Number of Instances** | **Total Instances** | **P(Weight = 2800 \| Vehicle)** |
 |-------------|-------------------------|---------------------|---------------------------------|
 | Car         | 3                       | 7                   | 2/3                             |
 | Motorcycle  | 2                       | 7                   | 0                               |
 | Truck       | 2                       | 7                   | 0                               |
 
-For Max Speed:
-
+\- For Max Speed:
 | **Vehicle** | **Number of Instances** | **Total Instances** | **P(Max Speed = 135 \| Vehicle)** |
 |-------------|-------------------------|---------------------|-----------------------------------|
 | Car         | 3                       | 7                   | 1/3                               |
@@ -56,7 +48,6 @@ For Max Speed:
 | Truck       | 2                       | 7                   | 0                                 |
 
 \- Calculate each class:
-
 | **Class**  | **P(Class)** | **P(180 \| Class)** | **P(2800 \| Class)** | **P(135 \| Class)** | **Posterior Probability** |
 |------------|--------------|---------------------|----------------------|---------------------|---------------------------|
 | Car        | 3/7          | 1/3                 | 2/3                  | 1/3                 | 2/63                      |
@@ -64,7 +55,6 @@ For Max Speed:
 | Truck      | 2/7          | 0                   | 0                    | 0                   | 0                         |
 
 \- final probabilities :
-
 | **Vehicle** | **Probability**           |
 |-------------|---------------------------|
 | Car         | (2/63) / (2/63 + 0 + 0)=1 |
